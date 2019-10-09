@@ -25,6 +25,12 @@ namespace Lab3
                 app.UseDeveloperExceptionPage();
             }
 
+            DefaultFilesOptions options = new DefaultFilesOptions();
+            options.DefaultFileNames.Clear();
+            options.DefaultFileNames.Add("WebStore.html");
+            app.UseDefaultFiles(options);
+            app.UseStaticFiles();
+
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
