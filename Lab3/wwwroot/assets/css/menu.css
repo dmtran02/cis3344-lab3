@@ -1,3 +1,66 @@
-﻿.menu {
+﻿body {
+    background-color: aquamarine;
+}
+
+#header {
+    position: relative;
+    font-size: 50px;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 5px;
+    width: 40%;
+    height: 30%;
+    left: 30%;
+    background-color: chocolate;
+}
+
+#orderDetails {
+    text-align: center;
+    text-decoration: underline;
+}
+
+#orderList > li {
+    font-size: 48px;
+}
+
+td > button {
+    width: 60%;
+    height: 200px;
+}
+
+#buttonOptions > button {
+    margin-left: 12%;
+    width: 10%;
+    height: 30px;
+}
+
+table, th, td {
     border: 1px solid black;
+    border-collapse: collapse;
+    padding: 12px;
+    text-align: center;
+}
+
+td {
+    width: 300px;
+}
+
+td, p {
+    font-size: 24px;
+}
+
+.coffeeDesc, .coffeePrice {
+    display: normal;
+}
+
+.teaDesc, .teaPrice {
+    display: none;
+}
+
+.pastryDesc, .pastryPrice {
+    display: none;
+}
+
+.merchandiseDesc, .merchandisePrice {
+    display: none;
 }

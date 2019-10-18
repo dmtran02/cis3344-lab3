@@ -6,13 +6,17 @@
     <meta charset="utf-8" />
     <title>Lab 3 - WebStore</title>
 </head>
-<body>
-    <h1 id="header">WebStore</h1>
-    <select name="itemSelect">
-        <option value="Coffee">Coffee</option>
-        <option value="Tea">Tea</option>
-        <option value="Pastry">Pastry</option>
+<body onload="createObjects()">
+    <h1 id="header">Welcome to the WebStore Cafe</h1>
+    <p>Select an Item Category: </p>
+    <select id="itemDropdownSelect" name="itemSelect" onchange="changeMenuItems();">
+        <option value="coffee">Coffee</option>
+        <option value="tea">Tea</option>
+        <option value="pastry">Pastry</option>
+        <option value="merchandise">Merchandise</option>
     </select>
+    <br />
+    <br onload="clearOrder()"/>
     <table class="menu">
         <tr>
             <th id="item">Item</th>
@@ -20,22 +24,355 @@
             <th id="price">Price</th>
         </tr>
         <tr>
-            <td headers="item">Americano</td>
-            <td headers="desc">Bill</td>
-            <td headers="price">$12.50</td>
+            <td name="item" class="itemName" id="americano" headers="item">
+                <h1 id="itemName0">Americano</h1>
+                <div id="imageDisplay0">
+                    <img style="width: 300px; height: 300px" src="assets/img/americano.jpg" />
+                </div>
+            </td>
+            <td id="desc" headers="desc">
+                <p id="coffeeDesc0" class="coffeeDesc">
+                    Prepared by diluting an espresso with hot water,
+                    giving it a similar strength to, but different flavor from, traditionally brewed coffee.
+                </p>
+                <p id="teaDesc0" class="teaDesc">
+                    Made from Camellia sinensis leaves and buds that have not undergone the same withering and
+                    oxidation process used to make oolong and black teas.
+                </p>
+                <p id="pastryDesc0" class="pastryDesc">
+                    Originated in the United States and features chocolate chips, moresels and other toppings as
+                    distinguished ingredients.
+                </p>
+                <p id="merchandiseDesc0" class="merchandiseDesc">
+                    Fancy a tea party with our special tea cups from our coffee shop. Makes it feel like you are in France.
+                </p>
+            </td>
+            <td headers="price">
+                <p class="coffeePrice">$3.50</p>
+                <p class="teaPrice">$2.50</p>
+                <p class="pastryPrice">$2.00</p>
+                <p class="merchandisePrice">$12.50</p>
+            </td>
+            <td><button type="button" name="Americano" onclick="addItem(0)">Add Item</button></td>
         </tr>
         <tr>
-            <td headers="item">Americano</td>
-            <td headers="desc">Bill</td>
-            <td headers="price">$12.50</td>
+            <td name="item" class="itemName" id="cold-brew" headers="item">
+                <h1 id="itemName1">Cold Brew</h1>
+                <div id="imageDisplay1">
+                    <img style="width: 300px; height: 300px" src="assets/img/cold-brew.jpg" />
+                </div>
+            </td>
+            <td id="desc" headers="desc">
+                <p id="coffeeDesc1" class="coffeeDesc">
+                    Made by steeping coarsely ground coffee beans in room-temperature water for six to
+                    12 hours.
+                </p>
+                <p id="teaDesc1" class="teaDesc">
+                    Black tea is a type of tea that is more oxidized than oolong, green, and white teas and
+                    has stronger flavor. Made from Camellia sinensis leaves and uses oxidation to turn the leaves
+                    from green to a dark brownish-black color.
+                </p>
+                <p id="pastryDesc1" class="pastryDesc">
+                    A British baked good, usually made of wheat or oatmeal with baking powder, that is often slightly
+                    sweetened and occasionally glaed with egg wash.
+                </p>
+                <p id="merchandiseDesc1" class="merchandiseDesc">
+                    Enjoy your morning or coffee run with a special, unique mug from the coffee shop. Designed to unsulate
+                    so you can enjoy your coffee warm or cool longer.
+                </p>
+            </td>
+            <td headers="price">
+                <p class="coffeePrice">$3.50</p>
+                <p class="teaPrice">$2.50</p>
+                <p class="pastryPrice">$2.00</p>
+                <p class="merchandisePrice">$12.50</p>
+            </td>
+            <td><button type="button" name="Cold Brew" onclick="addItem(1)">Add Item</button></td>
         </tr>
         <tr>
-            <td headers="item">Americano</td>
-            <td headers="desc">Bill</td>
-            <td headers="price">$12.50</td>
+            <td name="item" class="itemName" id="frappuccino" headers="item">
+                <h1 id="itemName2">Frappuccino</h1>
+                <div id="imageDisplay2">
+                    <img style="width: 300px; height: 300px" src="assets/img/frappuccino.jpg" />
+                </div>
+            </td>
+            <td id="desc" headers="desc">
+                <p id="coffeeDesc2" class="coffeeDesc">
+                    Consists of coffee or crème base, blended with ice and other various ingredients, usually topped with
+                    whipped cream and drizzles.
+                </p>
+                <p id="teaDesc2" class="teaDesc">
+                    Traditional semi-oxideized Chinese tea produced through a process including withering the plant
+                    under strong sun and oxidation  before curling and twisting.
+                </p>
+                <p id="pastryDesc2" class="pastryDesc">
+                    A baked dish consisting of a filling over a pastry base with an open top but not covred with pastry.
+                    The pastry is then topped off with fruits and powdered sugar.
+                </p>
+                <p id="merchandiseDesc2" class="merchandiseDesc">
+                    Bags filled with coffee beans of your favorite coffee shop blends. Ready to buy and brew right from 
+                    home with the same wonderful taste.
+                </p>
+            </td>
+            <td headers="price">
+                <p class="coffeePrice">$3.50</p>
+                <p class="teaPrice">$2.50</p>
+                <p class="pastryPrice">$2.00</p>
+                <p class="merchandisePrice">$12.50</p>
+            </td>
+            <td><button type="button" name="Frappuccino" onclick="addItem(2)">Add Item</button></td>
+        </tr>
+        <tr>
+            <td name="item" class="itemName" id="latte" headers="item">
+                <h1 id="itemName3">Latte</h1>
+                <div id="imageDisplay3">
+                    <img style="width: 300px; height: 300px" src="assets/img/latte.jpg" />
+                </div>
+            </td>
+            <td id="desc" headers="desc">
+                <p id="coffeeDesc3" class="coffeeDesc">
+                    Made with espresso and steamed milk. May include milk foam top depending on request. Originated in Italy
+                </p>
+                <p id="teaDesc3" class="teaDesc">
+                    Made from Camellia sinensis plant leaves. Rich in antioxidants, helps with weight loss, and
+                    has compounds to fight against cancer.
+                </p>
+                <p id="pastryDesc3" class="pastryDesc">
+                    A buttery, flaky, veiennoiserie pastry that is folded over and over again with cold butter in between
+                    each layer. From Austrian and French origin and named for its historical crescent shape.
+                </p>
+                <p id="merchandiseDesc3" class="merchandiseDesc">
+                    Bundles of tea leaves ready for you to take home brew your blend of favorite tea. Comes in many 
+                    different varieties.
+                </p>
+            </td>
+            <td headers="price">
+                <p class="coffeePrice">$3.50</p>
+                <p class="teaPrice">$2.50</p>
+                <p class="pastryPrice">$2.00</p>
+                <p class="merchandisePrice">$12.50</p>
+            </td>
+            <td><button type="button" name="Latte" onclick="addItem(3)">Add Item</button></td>
+        </tr>
+        <tr>
+            <td name="item" class="itemName" id="mocha" headers="item">
+                <h1 id="itemName4">Mocha</h1>
+                <div id="imageDisplay4">
+                    <img style="width: 300px; height: 300px" src="assets/img/mocha.jpg" />
+                </div>
+            </td>
+            <td id="desc" headers="desc">
+                <p id="coffeeDesc4" class="coffeeDesc">
+                    A chocolate-flavored variant of a caffè latte. Made with espresso, chocolate, and steamed milk along
+                    with a top of whipped cream.
+                </p>
+                <p id="teaDesc4" class="teaDesc">
+                    Variety of fermented tea produced in the Yunnan province of China. Helps lower blood sugar,
+                    maintain and benefit weight loss, and improve the immune system.
+                </p>
+                <p id="pastryDesc4" class="pastryDesc">
+                    A type of cake that is shaped into a doughnut shape. Light, moist and full of flavor that is topped
+                    with a rich lemon glaze.
+                </p>
+                <p id="merchandiseDesc4" class="merchandiseDesc">
+                    Protect surfaces from condensation liquids from your drinks. Also place on top of your drinks to show
+                    that it is not finished and to protect from contamination.
+                </p>
+            </td>
+            <td headers="price">
+                <p class="coffeePrice">$3.50</p>
+                <p class="teaPrice">$2.50</p>
+                <p class="pastryPrice">$2.00</p>
+                <p class="merchandisePrice">$12.50</p>
+            </td>
+            <td><button type="button" name="Mocha" onclick="addItem(4)">Add Item</button></td>
+        </tr>
+        <tr>
+            <td name="item" class="itemName" id="macchiato" headers="item">
+                <h1 id="itemName5">Macchiato</h1>
+                <div id="imageDisplay5">
+                    <img style="width: 300px; height: 300px" src="assets/img/macchiato.jpg" />
+                </div>
+            </td>
+            <td id="desc" headers="desc">
+                <p id="coffeeDesc5" class="coffeeDesc">
+                    Espresso coffee drink with a small amount of milk, usually foamed. Usually served hot. Originated from
+                    Italy.
+                </p>
+                <p id="teaDesc5" class="teaDesc">
+                    A tea blend which has been flavoured with addition of oil of bergamot. The fragrance from this oil is
+                    added to give a unique taste to this blend.
+                </p>
+                <p id="pastryDesc5" class="pastryDesc">
+                    A small cake designed to serve one person. Baked in small thin paper or aluminum cup. Different variations
+                    of design, depending on season, is added involving icing, fruits, and candy.
+                </p>
+                <p id="merchandiseDesc5" class="merchandiseDesc">
+                    Keep track of your day or your routine coffee desires. Great for home or office decor and as a gift
+                    for your coffee-loving friend.
+                </p>
+            </td>
+            <td headers="price">
+                <p class="coffeePrice">$3.50</p>
+                <p class="teaPrice">$2.50</p>
+                <p class="pastryPrice">$2.00</p>
+                <p class="merchandisePrice">$12.50</p>
+            </td>
+            <td><button type="button" name="Macchiato" onclick="addItem(5)">Add Item</button></td>
+        </tr>
+        <tr>
+            <td name="item" class="itemName" id="flat-white" headers="item">
+                <h1 id="itemName6">Flat-White</h1>
+                <div id="imageDisplay6">
+                    <img style="width: 300px; height: 300px" src="assets/img/flat-white.jpg" />
+                </div>
+            </td>
+            <td id="desc" headers="desc">
+                <p id="coffeeDesc6" class="coffeeDesc">
+                    Consists of espresso with microfoam. It is similar to a latte, but is smaller in volume and with less
+                    microfoam. This allows the drink to have a higher proportion of coffee to milk.
+                </p>
+                <p id="teaDesc6" class="teaDesc">
+                    Contains many beneficial health properties to ease stomachaches, improve mental health, nausea, and
+                    abdominal pain. A perfect remedy for most health issues.
+                </p>
+                <p id="pastryDesc6" class="pastryDesc">
+                    A sweet meringue-based confection made with egg whites, icing sugar, granulated sugar, almond meal, and
+                    food coloring.
+                </p>
+                <p id="merchandiseDesc6" class="merchandiseDesc">
+                    Custom-made T-shirt designed for coffee lovers and enthusiasts alike. Made from 100% cotton.
+                </p>
+            </td>
+            <td headers="price">
+                <p class="coffeePrice">$3.50</p>
+                <p class="teaPrice">$2.50</p>
+                <p class="pastryPrice">$2.00</p>
+                <p class="merchandisePrice">$12.50</p>
+            </td>
+            <td><button type="button" name="Flat-White" onclick="addItem(6)">Add Item</button></td>
+        </tr>
+        <tr>
+            <td name="item" class="itemName" id="espresso" headers="item">
+                <h1 id="itemName7">Espresso</h1>
+                <div id="imageDisplay7">
+                    <img style="width: 300px; height: 300px" src="assets/img/espresso.jpg" />
+                </div>
+            </td>
+            <td id="desc" headers="desc">
+                <p id="coffeeDesc7" class="coffeeDesc">
+                    Brewed by forcing a small amount of nearly boiling water under pressure through finely ground coffee
+                    beans. Generally thicker than coffee brewed using other methods. It also has a higher concentration
+                    of suspended and dissolved solids with crema on the top.
+                </p>
+                <p id="teaDesc7" class="teaDesc">
+                    Made from fresh or dried leaves of a black currant plant. Often adds dried black currants to add flavor and
+                    color. This tea is rich in antioxidants that provide numerous health benefits.
+                </p>
+                <p id="pastryDesc7" class="pastryDesc">
+                    An oblong pastry made with choux dough filled with a cream topped with chocolate icing. The dough,
+                    which is the same as that used for profiterole, is typically piped into an oblong shape with a
+                    pastry bag and baked until it is crisp and hollow inside.
+                </p>
+                <p id="merchandiseDesc7" class="merchandiseDesc">
+                    Picture of the first, founding local coffee shop where it all began. Great for home decor and as a
+                    gift for a special one.
+                </p>
+            </td>
+            <td headers="price">
+                <p class="coffeePrice">$3.50</p>
+                <p class="teaPrice">$2.50</p>
+                <p class="pastryPrice">$2.00</p>
+                <p class="merchandisePrice">$12.50</p>
+            </td>
+            <td><button type="button" name="Espresso" onclick="addItem(7)">Add Item</button></td>
+        </tr>
+        <tr>
+            <td name="item" class="itemName" id="cappuccino" headers="item">
+                <h1 id="itemName8">Cappuccino</h1>
+                <div id="imageDisplay8">
+                    <img style="width: 300px; height: 300px" src="assets/img/cappuccino.jpg" />
+                </div>
+            </td>
+            <td id="desc" headers="desc">
+                <p id="coffeeDesc8" class="coffeeDesc">
+                    Espresso-based coffee drink that is traditionally prepared with steamed milk foam. Other variations
+                    of this drink may use cream instead of milk, and flavoring with cinnamon or chocolate powder.
+                </p>
+                <p id="teaDesc8" class="teaDesc">
+                    Popular beverage that offers a variety of health benefits like sleep and digestion. Chamomile is
+                    a herb from daisy-like flowers.
+                </p>
+                <p id="pastryDesc8" class="pastryDesc">
+                    Italian almond biscuits that originated in the city of Prato. They are twice-baked, oblong-shaped,
+                    dry, crunchy, and may be dipped in a drink, traditionally Vin Santo.
+                </p>
+                <p id="merchandiseDesc8" class="merchandiseDesc">
+                    Add style to your look as a barista. Protect your clothes from stains and messes while working and 
+                    look great at the same time.
+                </p>
+            </td>
+            <td headers="price">
+                <p class="coffeePrice">$3.50</p>
+                <p class="teaPrice">$2.50</p>
+                <p class="pastryPrice">$2.00</p>
+                <p class="merchandisePrice">$12.50</p>
+            </td>
+            <td><button type="button" name="Cappuccino" onclick="addItem(8)">Add Item</button></td>
+        </tr>
+        <tr>
+            <td name="item" class="itemName" id="breve" headers="item">
+                <h1 id="itemName9">Breve</h1>
+                <div id="imageDisplay9">
+                    <img style="width: 300px; height: 300px" src="assets/img/breve.jpg" />
+                </div>
+            </td>
+            <td id="desc" headers="desc">
+                <p id="coffeeDesc9" class="coffeeDesc">
+                    Espresso-based drink that is made similar to a cappuccino. Made with steamed half-and-half instead of milk.
+                    This produces a creamy texture for the foam.
+                </p>
+                <p id="teaDesc9" class="teaDesc">
+                    Flavoured tea beverage made by brewing black tea with a mixture of aromatic spices and herbs.
+                    Originating in the Indian subcontinent, the beverage has gained worldwide popularity,
+                    becoming a feature in many coffee and tea houses.
+                </p>
+                <p id="pastryDesc9" class="pastryDesc">
+                    A baked dish which is usually made of a pastry dough casing that completely contains a filling of
+                    various sweet or savoury ingredients. Sweet pies may be filled with fruit, nuts, brown sugar or
+                    sweetened vegetables. Savoury pies may be filled with meat, eggs and cheese or a mixture of meat and
+                    vegetables.
+                </p>
+                <p id="merchandiseDesc9" class="merchandiseDesc">
+                    A stubby holder. A fabric or foam sleeve designed to thermally insulate your beverage container. 
+                    Keep your hands warm or wet-free. 
+                </p>
+            </td>
+            <td headers="price">
+                <p class="coffeePrice">$3.50</p>
+                <p class="teaPrice">$2.50</p>
+                <p class="pastryPrice">$2.00</p>
+                <p class="merchandisePrice">$12.50</p>
+            </td>
+            <td><button type="button" name="Breve" onclick="addItem(9)">Add Item</button></td>
         </tr>
     </table>
-    <button name="add-to-order">Add to Order</button>
-    <button name="submit">Place Order</button>
+    <br />
+    <br />
+    <div id="buttonOptions">
+        <button type="button" name="submit" onclick="placeOrder()">Place Order</button>
+        <button type="button" name="clear" onclick="clearOrder()">Clear Order</button>
+        <button type="button" name="test" onclick="getItemSelected()">Get Item Category Test</button>
+    </div>
+
+    <br />
+    <br />
+    <hr />
+
+    <div>
+        <h1 id="orderDetails">Order Details </h1>
+        <ul id="orderList">
+        </ul>
+    </div>
 </body>
 </html>
